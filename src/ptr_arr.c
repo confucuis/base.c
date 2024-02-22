@@ -4,9 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void ptr_max_arr();
 void dynamic_arry(int size);
 
-int main(void)
+int main()
 {
     int arr[5] = {2, 3, 4};
 
@@ -24,7 +25,29 @@ int main(void)
 
     dynamic_arry(6);
 
+    ptr_max_arr();
+
     return 0;
+}
+
+// 指针与多维数组
+void ptr_max_arr()
+{
+    int arr[3][5] = {
+        {12, 32, 45},
+	{33, 90, 45, 57, 98},
+	{24, 27, 87, 67, 64}
+    };
+
+    // 指向一维数组的指针
+    int (*ptr)[5] = arr;
+
+    for (int i=0; i<3; i++) {
+        for (int j=0; j<5; j++) {
+	    printf("arr[%d][%d]: %d\n", i, j, arr[i][j]);
+	    printf("ptr->arr[%d][%d]: %d\n", i, j, *(*(ptr + i)+j));
+	}
+    }
 }
 
 // 动态数组
