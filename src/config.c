@@ -1,44 +1,45 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define MAX_LEN 50
-
-struct Config {
-    char name[MAX_LEN];
-    int age;
-    char city[MAX_LEN];
-};
+#include <glib.h>
 
 int main() {
-    struct Config config;
-    
+    GHashTable *config = g_hash_table_new(g_str_hash, g_str_equal);
+
     FILE *file = fopen("config.txt", "r");
     if (file == NULL) {
         printf("Error opening file.\n");
         return 1;
     }
-    
-    char line[MAX_LEN];
+
+    char line[100];
     while (fgets(line, sizeof(line), file)) {
-        char key[MAX_LEN], value[MAX_LEN];
-        sscanf(line, "%[^=]=%[^\n]", key, value);
-        
-        if (strcmp(key, "Name") == 0) {
-            strcpy(config.name, value);
-        } else if (strcmp(key, "Age") == 0) {
-            config.age = atoi(value);
-        } else if (strcmp(key, "City") == 0) {
-            strcpy(config.city, value);
+        if (line[0] == '#') {
+            continue; // 忽略注释行
         }
+        
+        char key[50], value[50];
+        sscanf(line, "%[^=]=%[^\n]", key, value);
+        g_hash_table_insert(config, g_strdup(key), g_strdup(value));
     }
-    
+
     fclose(file);
-    
+
+    // 获取配置项的值
+    const gchar *name = g_hash_table_lookup(config, "Name");
+    const gchar *age_str = g_hash_table_lookup(config, "Age");
+    int age = atoi(age_str);
+    const gchar *city = g_hash_table_lookup(config, "City");
+
     // 输出配置项的值
-    printf("Name: %s\n", config.name);
-    printf("Age: %d\n", config.age);
-    printf("City: %s\n", config.city);
-    
+    printf("Name: %s\n", name);
+    printf("Age: %d\n", age);
+    printf("City: %s\n", city);
+
+    // 清理内存
+    g_hash_table_destroy(config);
+
     return 0;
 }
+// 安装glib库: sudo apt install libglib2.0-dev
+// 编译: gcc -o main config.c `pkg-config --cflags --libs glib-2.0`
