@@ -12,6 +12,8 @@
 * *其他*
 > * [配置管理](src/config.c)
 > * [回显服务器](src/echo.c)
+> * [聊天服务器](src/chat.c)
+> * [代理服务器](src/proxy.c)
 
 * *leetcode*
 > * [两数之和](src/leetcode_sum_num.c)
