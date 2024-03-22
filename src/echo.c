@@ -9,7 +9,8 @@
 #define PORT 8888
 #define BUF_SIZE 1024
 
-int main() {
+int main() 
+{
     int sockfd, newsockfd, clilen;
     char buffer[BUF_SIZE];
     struct sockaddr_in serv_addr, cli_addr;
