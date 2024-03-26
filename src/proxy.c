@@ -1,4 +1,3 @@
-// 代理服务器
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -74,22 +73,22 @@ void *handle_client(void *arg) {
     char message[BUF_SIZE];
     int str_len;
 
+    // 连接到目标服务器
+    int dest_sock = socket(PF_INET, SOCK_STREAM, 0);
+    if (dest_sock == -1)
+        error_handling("socket() error");
+
+    struct sockaddr_in dest_addr;
+    memset(&dest_addr, 0, sizeof(dest_addr));
+    dest_addr.sin_family = AF_INET;
+    dest_addr.sin_addr.s_addr = inet_addr(dest_ip);
+    dest_addr.sin_port = htons(dest_port);
+
+    if (connect(dest_sock, (struct sockaddr *)&dest_addr, sizeof(dest_addr)) == -1)
+        error_handling("connect() error");
+
     while ((str_len = recv(clnt_sock, message, BUF_SIZE, 0)) > 0) {
         printf("Received from client: %s\n", message);
-
-        // 连接到目标服务器
-        int dest_sock = socket(PF_INET, SOCK_STREAM, 0);
-        if (dest_sock == -1)
-            error_handling("socket() error");
-
-        struct sockaddr_in dest_addr;
-        memset(&dest_addr, 0, sizeof(dest_addr));
-        dest_addr.sin_family = AF_INET;
-        dest_addr.sin_addr.s_addr = inet_addr(dest_ip);
-        dest_addr.sin_port = htons(dest_port);
-
-        if (connect(dest_sock, (struct sockaddr *)&dest_addr, sizeof(dest_addr)) == -1)
-            error_handling("connect() error");
 
         // 将数据转发到目标服务器
         int sent_len = 0;
@@ -111,10 +110,9 @@ void *handle_client(void *arg) {
                 sent_len += ret;
             }
         }
-
-        close(dest_sock);
     }
 
+    close(dest_sock);
     close(clnt_sock);
     return NULL;
 }
