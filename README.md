@@ -3,6 +3,7 @@
 
 * *指针*
 > * [指针与数组](src/ptr_arr.c)
+> * [const关键字](src/const.c)
 
 * *函数*
 > * [函数指针](src/fn_ptr.c)
