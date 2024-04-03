@@ -1,5 +1,7 @@
 ### C Basic Knowledge
 
+* *声明语法*
+> * [螺旋规则](https://c-faq.com/decl/spiral.anderson.html)
 
 * *指针*
 > * [指针与数组](src/ptr_arr.c)
