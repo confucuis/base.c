@@ -20,5 +20,9 @@
 > * [聊天服务器](src/chat.c)
 > * [代理服务器](src/proxy.c)
 
+* *C标准函数库*
+> * [assert.h](src/h_assert.c)
+> * [stdio.h](src/h_stdio.c)
+
 * *leetcode*
 > * [两数之和](src/leetcode_sum_num.c)
