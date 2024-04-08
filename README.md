@@ -3,6 +3,9 @@
 * *声明语法*
 > * [螺旋规则](https://c-faq.com/decl/spiral.anderson.html)
 
+* *标准库文档*
+> * [C Library](https://sourceware.org/glibc/manual/2.38/html_mono/libc.html)
+
 * *指针*
 > * [指针与数组](src/ptr_arr.c)
 > * [const关键字](src/const.c)
@@ -19,10 +22,6 @@
 > * [回显服务器](src/echo.c)
 > * [聊天服务器](src/chat.c)
 > * [代理服务器](src/proxy.c)
-
-* *C标准函数库*
-> * [assert.h](src/h_assert.c)
-> * [stdio.h](src/h_stdio.c)
 
 * *leetcode*
 > * [两数之和](src/leetcode_sum_num.c)
