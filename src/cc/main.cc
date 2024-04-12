@@ -1,6 +1,5 @@
 #include "test.h"
 
-
 int main()
 {
     ABC::Person p;
