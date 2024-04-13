@@ -26,5 +26,18 @@ int main()
     std::shared_ptr<std::string> bar(new std::string("bar!"));
     std::cout << *bar << std::endl;
 
+    // 引用
+    // 1. 引用创建时必须初始化, 有效的指针可以在任何时候指向不同变量
+    // 2. 引用不能为NULL, 指针可以为NULL
+    // 3. 引用不需要*号来进行操作, 指针需要
+    std::string color = "blue";
+    std::string &coulor = color; // 创建一个引用
+    std::cout << color << std::endl;
+    std::cout << coulor << std::endl;
+    coulor = "green";  // 通过引用修改变量值
+    std::cout << color << std::endl;
+    std::cout << coulor << std::endl;
+    
+
     return 0;
 }
