@@ -7,9 +7,8 @@ int main()
     // 数组
     std::cout << "数组: " << std::endl;
     std::array<int, 5> arra = {100, 23, 49, 56, 73};
-    for (auto item = arra.begin(); item != arra.end(); item++) {
+    for (auto item = arra.begin(); item != arra.end(); item++)
         std::cout << *item << std::endl;
-    }
 
     // 双端队列
     std::cout << "双端队列: " << std::endl;
