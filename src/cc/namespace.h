@@ -1,5 +1,5 @@
-#ifndef _TEST_H_
-#define _TEST_H_
+#ifndef _NAMESPACE_H_
+#define _NAMESPACE_H_
 
 #include <iostream>
 
@@ -15,4 +15,4 @@ public:
 
 } // namespace ABC
 
-#endif // _TEST_H_
+#endif // _NAMESPACE_H_
