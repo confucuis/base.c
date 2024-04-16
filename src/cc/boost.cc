@@ -1,5 +1,6 @@
 /*
 * http://zh.highscore.de/cpp/boost/
+* ubuntu: sudo apt-get install libboost-all-dev
 */
 #include <string>
 #include <iostream>
