@@ -17,6 +17,7 @@ public:
     void PrintAddr() {
         std::cout << this->addr << std::endl;
     }
+    // 友元(函数或类)可以声明在类中的任何位置
     friend void PrintNameAddr (Person *p){
         std::cout << p->name + ": "  + p->addr << std::endl;
     }
