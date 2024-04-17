@@ -1,4 +1,4 @@
-#include "namespace.h"
+#include "namespace.hpp"
 
 int main()
 {
