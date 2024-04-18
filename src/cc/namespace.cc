@@ -1,4 +1,4 @@
-#include "namespace.hpp"
+#include "namespace.hh"
 
 namespace ABC {
 
