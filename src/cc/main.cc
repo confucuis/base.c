@@ -9,4 +9,4 @@ int main()
     return 0;
 }
 
-// g++ main.cc test.cc -o main
+// g++ main.cc namespace.cc -o main
