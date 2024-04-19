@@ -51,6 +51,27 @@ public:
     }
 };
 
+// 没有实现Shape接口
+// 不能作为Shape类型进行使用
+class Test {
+private:
+    double width;
+    double heigth;
+public:
+    Test(double width, double heigth) {
+        this->width = width;
+        this->heigth = heigth;
+    }
+
+    double area() {
+        return this->width * this->heigth;
+    }
+
+    double perimeter() {
+        return (this->width + this->heigth) * 2;
+    }
+};
+
 void PrintShape(Shape *shape)
 {
     std::cout << "area: " << shape->area() << std::endl;
@@ -66,6 +87,10 @@ int main()
     PrintShape(&circle);
     std::cout << "=== rectangle ==" << std::endl;
     PrintShape(&rectangle);
+
+    // Test test(3, 3);
+    // 作为Shape接口类型进行使用(报错)
+    // PrintShape(&test);    
 
     return 0;
 }
