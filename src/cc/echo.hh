@@ -8,7 +8,8 @@
 using boost::asio::ip::tcp;
 
 // EchoServer 类的声明
-class EchoServer {
+class EchoServer
+{
 public:
     // 构造函数
     EchoServer(boost::asio::io_context& io_context, short port);

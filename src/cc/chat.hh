@@ -8,7 +8,8 @@
 #include <set>
 #include <boost/asio.hpp>
 
-class ChatSession : public std::enable_shared_from_this<ChatSession> {
+class ChatSession : public std::enable_shared_from_this<ChatSession>
+{
 public:
     ChatSession(boost::asio::ip::tcp::socket socket, std::set<std::shared_ptr<ChatSession>>& sessions);
 
@@ -27,7 +28,8 @@ private:
     std::string m_message;
 };
 
-class ChatServer {
+class ChatServer
+{
 public:
     ChatServer(boost::asio::io_service& io_service, const boost::asio::ip::tcp::endpoint& endpoint);
 

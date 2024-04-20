@@ -3,7 +3,7 @@
 #include "proxy.hh"
 
 int main() {
-    /*
+    
     try {
         // 创建 Boost.Asio 的 io_context 对象
         boost::asio::io_context io_context;
@@ -16,7 +16,7 @@ int main() {
     } catch (std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
-    */
+ 
 
     /*
     try {
@@ -28,16 +28,6 @@ int main() {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
     */
-
-    try {
-        boost::asio::io_context io_context;
-        ProxyServer proxy_server(io_context, "127.0.0.1", "8000"); // 代理服务器将连接到本地主机的80端口
-
-        std::cout << "Proxy server started..." << std::endl;
-        proxy_server.start();
-    } catch (std::exception& e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
-    }
 
     return 0;
 }
