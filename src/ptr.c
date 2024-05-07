@@ -34,7 +34,7 @@ int main()
     // 不能通过通用指针去访问具体类型的值,会报错
     // printf("%d\n", *generic_pointer);
 
-    // 必须将void *通用指针转换为int类型的指针，并使用指针访问所指向的值
+    // 必须将void *通用指针转换为int类型的指针，并使用int型指针访问所指向的值
     int *int_pointer = (int *)generic_pointer;
     printf("The value of num is: %d\n", *int_pointer);
 
