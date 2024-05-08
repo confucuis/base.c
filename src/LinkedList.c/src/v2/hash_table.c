@@ -76,7 +76,7 @@ int search_hash_table(struct HashTable *hash_table, const char *key)
         tmp = tmp->next;
     }
 
-    return -2;
+    return -2;  // 未找到对应键的值
 }
 
 void delete_hash_table(struct HashTable *hash_table)
