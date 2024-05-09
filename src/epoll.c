@@ -8,8 +8,8 @@
 #include <sys/epoll.h>
 
 // 最大客户端连接数
-#define MAX_EVENTS 10
-#define MAX_CLIENTS 10
+#define MAX_EVENTS 3
+#define MAX_CLIENTS 3
 
 int main() {
     int server_socket, client_socket[MAX_CLIENTS], max_clients = 0;
