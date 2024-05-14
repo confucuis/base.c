@@ -11,7 +11,7 @@ OBJECTS := $(SOURCES:$(SRCDIR)/%.cpp=$(BINDIR)/%.o)
 TEST_SOURCES := $(wildcard $(TESTDIR)/*.cpp)
 TEST_OBJECTS := $(TEST_SOURCES:$(TESTDIR)/%.cpp=$(BINDIR)/%.o)
 
-EXECUTABLE := test
+EXECUTABLE := bin/test
 
 .PHONY: all clean
 
@@ -30,4 +30,4 @@ $(BINDIR):
 	mkdir -p $(BINDIR)
 
 clean:
-	rm -rf $(BINDIR) $(EXECUTABLE)
+	rm -rf $(BINDIR)
