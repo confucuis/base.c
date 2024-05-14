@@ -24,7 +24,7 @@ void TimeWheel::run() {
       exec_task(current_slot);
       current_slot = now_slot;
     }
-    this_thread::sleep_for(seconds(1440)); // 时间轮的时间间隔，这里设置为100毫秒
+    this_thread::sleep_for(seconds(1440)); // 时间轮的时间间隔
   }
 }
 
