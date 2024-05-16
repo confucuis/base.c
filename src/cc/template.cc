@@ -1,6 +1,8 @@
 // 模板
 #include <iostream>
 
+// 这里的typename
+// 可以与class同义
 template <typename T>
 class Arithmetic
 {
