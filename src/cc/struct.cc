@@ -1,27 +1,15 @@
-#include <iostream>
-#include <string>
+#include "struct.hh"
 
-struct Animal {
-public:
-    Animal(int age, std::string name) {
-        this->age = age;
-        this->name = name;
-    }
-    int get_age() {
-        return this->age;
-    }
-    std::string get_name() {
-        return this->name;
-    }
-private:
-    int age;
-    std::string name;
-};
+Animal::Animal(int age, std::string name)
+  : _age(age), _name(name){}
 
-int main() 
+int Animal::get_age()
 {
-    Animal animal(6, "cat");
-    std::cout << animal.get_name() << " " << animal.get_age() << std::endl;
-
-    return 0;
+  return _age;
 }
+
+std::string Animal::get_name()
+{
+  return _name;
+}
+
