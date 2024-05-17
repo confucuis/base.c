@@ -7,3 +7,5 @@ int main()
 
     return 0;
 }
+
+// g++ struct_test.cc struct.cc
