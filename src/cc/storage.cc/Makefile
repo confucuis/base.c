@@ -5,13 +5,14 @@ LDFLAGS :=
 SRCDIR := src
 TESTDIR := tests
 BINDIR := bin
+DATA := $(wildcard ./*.txt)
 
 SOURCES := $(wildcard $(SRCDIR)/*.cpp)
 OBJECTS := $(SOURCES:$(SRCDIR)/%.cpp=$(BINDIR)/%.o)
 TEST_SOURCES := $(wildcard $(TESTDIR)/*.cpp)
 TEST_OBJECTS := $(TEST_SOURCES:$(TESTDIR)/%.cpp=$(BINDIR)/%.o)
 
-EXECUTABLE := bin/timer
+EXECUTABLE := bin/storage
 
 .PHONY: all clean
 
@@ -30,4 +31,4 @@ $(BINDIR):
 	mkdir -p $(BINDIR)
 
 clean:
-	rm -rf $(BINDIR)
+	rm -rf $(BINDIR) $(DATA)
