@@ -37,6 +37,7 @@ void Storage::save_to_file()
 
 void Storage::set(const std::string& key, const std::string& value)
 {
+  load_from_file();
   data[key] = value;
   save_to_file();
 }
@@ -51,6 +52,7 @@ std::string Storage::get(const std::string& key)
 
 void Storage::del(const std::string& key)
 {
+  load_from_file();
   if (data.find(key) != data.end()) {
     data.erase(key);
     save_to_file(); 
