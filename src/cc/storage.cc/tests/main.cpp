@@ -2,8 +2,8 @@
 
 const std::string Usage = 
 "Usage: storage -set key value \n"
-"        storage -get key \n"
-"        storage -del key \n";
+"       storage -get key \n"
+"       storage -del key \n";
 
 int main(int argc, const char *argv[])
 {
