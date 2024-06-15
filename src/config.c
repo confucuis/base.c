@@ -6,7 +6,7 @@
 int main() {
     GHashTable *config = g_hash_table_new(g_str_hash, g_str_equal);
 
-    FILE *file = fopen("../config.txt", "r");
+    FILE *file = fopen("config.txt", "r");
     if (file == NULL) {
         printf("Error opening file.\n");
         return 1;
