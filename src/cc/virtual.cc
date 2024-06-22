@@ -75,7 +75,7 @@ int main()
     Base &bb = d;
     bb.Print("hello wagawaga");
 
-    // 接口抽象类
+    // 接口抽象类(面向接口编程)
     Dog dog;
     Cat cat;
     AnimalAction(&dog);
