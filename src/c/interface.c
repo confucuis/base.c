@@ -30,10 +30,10 @@ void cat_waa(void)
 }
 
 // 使用接口进行不同动物的行为展示
-void animal_behavior(behavior *behavior)
+void animal_behavior(behavior *animal)
 {
-    behavior->run();
-    behavior->waa();
+    animal->run();
+    animal->waa();
 }
 
 int main()
