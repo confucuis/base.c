@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <pthread.h>
 
 void *print_message_function( void *ptr );
@@ -32,6 +33,7 @@ void *print_message_function( void *ptr )
 {
      char *message;
      message = (char *) ptr;
+     sleep(1);
      printf("%s \n", message);
 }
 
