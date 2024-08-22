@@ -3,11 +3,11 @@
 
 #include "light.h"
 
-struct Led {
+struct LedImpl {
     struct LightInterface *inf;
     int state;
 };
 
-int NewLed(struct Led *self);
+int NewLedImpl(struct LedImpl *self);
 
 #endif // __LED_H

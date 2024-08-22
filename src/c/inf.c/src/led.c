@@ -1,9 +1,9 @@
 #include "led.h"
 #include "light.h"
 
-int LedOn(struct Led *self);
-int LedOff(struct Led *self);
-int LedState(struct Led *self);
+int LedOn(struct LedImpl *self);
+int LedOff(struct LedImpl *self);
+int LedState(struct LedImpl *self);
 
 struct LightInterface LedInf = {
         .on = (LightOnFun)LedOn,
@@ -12,24 +12,24 @@ struct LightInterface LedInf = {
 };
 
 
-int LedOn(struct Led *self)
+int LedOn(struct LedImpl *self)
 {
     self->state = 1;
     return 0;
 }
 
-int LedOff(struct Led *self)
+int LedOff(struct LedImpl *self)
 {
     self->state = 0;
     return 0;
 }
 
-int LedState(struct Led *self)
+int LedState(struct LedImpl *self)
 {
     return self->state;
 }
 
-int NewLed(struct Led *self)
+int NewLedImpl(struct LedImpl *self)
 {
     self->inf = &LedInf;
     self->state = 0;

@@ -3,10 +3,10 @@
 
 int main() {
 
-    struct Led myLed;
+    struct LedImpl myLed;
     
     // Initialize the Led object
-    NewLed(&myLed);
+    NewLedImpl(&myLed);
     
     // Test initial state
     printf("Initial state: %d\n", LightState(&myLed));
